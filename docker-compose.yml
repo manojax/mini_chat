@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  app_1:
+    image: golang:1.20.5-alpine3.18
+    volumes:
+        - .:/app
+    working_dir: "/app"
+    tty: true
+    stdin_open: true
+    networks:
+      - chat_tool
+  app_2:
+    image: golang:1.20.5-alpine3.18
+    volumes:
+        - .:/app
+    working_dir: "/app"
+    tty: true
+    stdin_open: true
+    networks:
+      - chat_tool
+  app_3:
+    image: golang:1.20.5-alpine3.18
+    volumes:
+        - .:/app
+    working_dir: "/app"
+    tty: true
+    stdin_open: true
+    networks:
+      - chat_tool
+
+networks:
+  chat_tool:
+    driver: bridge
